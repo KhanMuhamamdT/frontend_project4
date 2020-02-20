@@ -40,3 +40,4 @@ Wireframe URL: https://xd.adobe.com/view/1fc0e38e-b6e7-4f8d-6d39-4ff96fc3d01e-69
  - Sunday - Event and Items page
  - Monday - Event List
  - Tuesday - Deployment 
+ 
