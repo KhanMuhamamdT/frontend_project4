@@ -49,10 +49,7 @@ const CreateEvent = () => {
      const [itemquantity,  setItemquantity] = React.useState('');
      const [priceunit,  setPriceunit] = React.useState('');
      var [items, setItems] = React.useState('');
-     
-    
-
-    const classes = useStyles();
+         const classes = useStyles();
     const handlepriceunit = event => {
         setPriceunit(event.target.value);
         };
