@@ -58,7 +58,7 @@ const CreateUer = () => {
           };
     return (
         
-      <Box  p={6} border = {1} borderRadius={16} m={2} width ='12rem'
+      <Box  p={6} border = {1} borderRadius={20} m={2} width ='30rem'
       height ='30rem'
       
       >

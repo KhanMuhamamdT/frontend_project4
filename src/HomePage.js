@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import CreateUser from "./CreateUser";
 import CreateEvent from "./CreateEvent";
 import Gallery from "./components/Gallery";
-
+import Itemdetails from "./Itemdetails";
 //import CreateItems from "./CreateItems"
 import Createtest from "./Createtest"
 // import CreatePost from "./CreatePost";
@@ -64,6 +64,9 @@ console.log('Home page')
       <Route path="/create-user" render={props => < CreateUser {...props} />}/>
       <Route path="/create-event" render={props => < CreateEvent {...props} />}/>
       <Route path="/create-items" render={props => < Createtest {...props} />}/>
+      <Route path="/itemdetails" render={props => < Itemdetails {...props} />}/>
+    
+    
     </BrowserRouter>
   
 

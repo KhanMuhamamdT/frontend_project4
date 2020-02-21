@@ -65,9 +65,7 @@ const NavBar = props => {
           </NavLink>
 
          
-
-
-       
+                
        
         {/* <NavLink
           className="nav-item nav-link custom-nav-item"
