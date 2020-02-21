@@ -58,7 +58,11 @@ const NavBar = props => {
           </Typography> 
           </NavLink>
 
-          
+          <NavLink  exact to="/create-items">
+        <Typography variant="h6" className={classes.title}>
+           <font color ='white'> Create Item List </font>
+          </Typography> 
+          </NavLink>
 
          
 

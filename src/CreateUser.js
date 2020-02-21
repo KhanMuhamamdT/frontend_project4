@@ -58,8 +58,12 @@ const CreateUer = () => {
           };
     return (
         
-        <Box  p={6}>
-        <GridListTileBar > </GridListTileBar>
+      <Box  p={6} border = {1} borderRadius={16} m={2} width ='12rem'
+      height ='30rem'
+      
+      >
+       
+        
             <h3> Registration</h3>
         <form className={classes.root}  noValidate autoComplete="off">
          <br/>

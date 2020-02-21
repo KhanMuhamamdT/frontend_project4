@@ -99,7 +99,7 @@ const CreateEvent = () => {
           };
     return (
         
-        <Box  p={6}>
+        <Box  p={6} border = {1} borderRadius={16} m={2} > 
         <GridListTileBar > </GridListTileBar>
             <h3> Create Event</h3>
         <form className={classes.root}  noValidate autoComplete="off">
@@ -110,27 +110,27 @@ const CreateEvent = () => {
               <TextField id="outlined-basic" label="Image URL" variant="outlined" 
         value={eventurl} onChange={handleimgurl} 
         />
-          
-       
+              
         
-        <TextField
-        id="datetime-local"
-        label="EventDate"
-        type="datetime-local"
-        defaultValue="2017-05-24T10:30"
-        className={classes.textField}
-        value = {eventdate}
-        onChange={handleeventdate}
+        <TextField id="datetime-local"
+          variant="outlined" 
+          label="EventDate"
+          type="datetime-local"
+          defaultValue="2017-05-24T10:30"
+          className={classes.textField}
+          value = {eventdate}
+          onChange={handleeventdate}
 
-        InputLabelProps={{
+           InputLabelProps={{
             shrink: true,
-          }}
-      />
+            }}
+        />
 
 <TextField
         id="time"
         label="Start Time"
         type="time"
+        variant="outlined" 
         defaultValue="07:30"
         className={classes.textField}
         value = {opentime}
@@ -146,6 +146,7 @@ const CreateEvent = () => {
         label="Close Time"
         type="time"
         defaultValue="07:30"
+        variant="outlined" 
         className={classes.textField}
         value = {closetime}
         onChange={handleclosetime}
@@ -166,6 +167,7 @@ const CreateEvent = () => {
           id="demo-simple-select-outlined" label="Address"
           value={status}
           onChange={handlemenustatus}
+          variant="outlined" 
          >
           <MenuItem value="">
             <em>None</em>
@@ -175,12 +177,11 @@ const CreateEvent = () => {
           <MenuItem value={'Pending'}>Pending</MenuItem>
         </Select>
       </FormControl>
-      <br/>
-        
-        <Button variant="contained" color="primary" onClick ={handleclick}>
-        Submit
+      <Link to={`/create-items`}>
+        <Button variant="contained" color="primary" size = "medium" onClick ={handleclick}>
+        Create Event
         </Button>
-        
+        </Link>
           </form>
           </Box>
 
