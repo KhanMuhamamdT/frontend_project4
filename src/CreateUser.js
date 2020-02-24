@@ -12,38 +12,37 @@ import { Box } from "@material-ui/core";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { GridListTileBar } from '@material-ui/core';
-
-const CreateUer = () => {
+let users =''
+  const CreateUer = () => {
     const useStyles = makeStyles(theme => ({
-        root: {
-          '& > *': {
-            margin: theme.spacing(1),
-          },
+      root: {
+      '& > *': {
+         margin: theme.spacing(1),
+         },
         },
-      }));
-      
-      
-        const [fname, setFname] = React.useState('');
-        const [lname, setLname] = React.useState('');
-        const [email, setEmail] = React.useState('');
-        const [address,setAddress] = React.useState('');
-        
-        const classes = useStyles();
-      
-        const handleFname = event => {
-            setFname(event.target.value);
-        };
-        const handleLname = event => {
+     }));
+           
+  const [fname, setFname] = React.useState('');
+  const [lname, setLname] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [address,setAddress] = React.useState('');
+  const [user,setUser] = React.useState('');
+  const classes = useStyles();
+    const handleFname = event => {
+      setFname(event.target.value);
+     };
+    const handleLname = event => {
             setLname(event.target.value);
-          };
-          const handleEmail = event => {
-            setEmail(event.target.value);
-          };
-          const handleAddress = event => {
-            setAddress(event.target.value);
-          };
-          const handleclick = () => {
-            fetch("http://localhost:8000/api/users", {
+     };
+    const handleEmail = event => {
+       setEmail(event.target.value);
+        };
+    const handleAddress = event => {
+        setAddress(event.target.value);
+       };
+    const handleclick = () => {
+          
+      fetch("http://localhost:8000/api/users", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json"
@@ -54,17 +53,19 @@ const CreateUer = () => {
                 email: email,
                 address: address
               })
-            });
+                       
+            })
+            .then(response => response.json())
+            .then(jsonData => {
+              setUser(jsonData)
+                         
+              });
+
           };
     return (
-        
-      <Box  p={6} border = {1} borderRadius={20} m={2} width ='30rem'
-      height ='30rem'
-      
-      >
-       
-        
-            <h3> Registration</h3>
+         <Box  p={6} border = {1} borderRadius={20} m={2} width ='rem'
+      height ='30rem'>
+        <h3> Registration</h3>
         <form className={classes.root}  noValidate autoComplete="off">
          <br/>
         <TextField id="outlined-basic" label="First Name" variant="outlined" 
@@ -83,11 +84,17 @@ const CreateUer = () => {
         value={address} onChange={handleAddress} 
         />
         <br/>
-        <Link to={`/`}>
+             
+          <Link to={"/create-event" }
+
+          
+          >
         <Button variant="contained" color="primary" onClick ={handleclick}>
         Submit
         </Button>
+        
         </Link>
+      
           </form>
           </Box>
 

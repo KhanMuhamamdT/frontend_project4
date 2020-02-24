@@ -51,23 +51,15 @@ const Itemdetails = () => {
               .then(res => setItems(res))
               .catch(err => console.log(err));
                   });
-        
-
-
-        
-         return (
-            
-        <div>
+                 return (
+                    <div>
                 {console.log(items)}  
 {items?
 <MaterialTable
       title="Item Details "
       columns={state.columns}
       data={items}
-      
-
-      
-/>
+    />
  : <div> </div>}
 
 

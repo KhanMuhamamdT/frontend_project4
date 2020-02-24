@@ -68,22 +68,22 @@ const CreateEvent = () => {
               })
             });
 
-          // fetching the records from DB
-          fetch("http://localhost:8000/api/items")
-          .then(res => res.json())
-          .then(res => {
-              setItems(res)
-            }
-                   )
-          .catch(err => console.log(err));
-          
-        
+            const handledelete = () => {
+              fetch("http://localhost:8000/api/items", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                  item_desc:itemdesc,
+                  quantity: itemquantity,
+                  unit_price : priceunit,
+                           
+                })
+              });
 
-          };
-
-          
-
-                  
+             };
+         
     return (
         <div>
         <Box  p={6} border = {1} borderRadius={16} m={2} > 
@@ -104,6 +104,12 @@ const CreateEvent = () => {
         Create Items
         </Button>
         
+        <Button variant="contained" color="primary" size = "medium" onClick ={handledelete}>
+        Delete Items
+        </Button>
+        
+
+
        
         </form>
      

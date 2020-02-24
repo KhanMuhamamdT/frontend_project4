@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const NavBar = props => {
-  console.log ("NAV BAR")
+  
   const classes = useStyles();
   return (
     <div className={classes.root}>
