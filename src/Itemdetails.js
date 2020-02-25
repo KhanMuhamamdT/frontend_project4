@@ -53,7 +53,7 @@ const Itemdetails = () => {
                   });
                  return (
                     <div>
-                {console.log(items)}  
+                
 {items?
 <MaterialTable
       title="Item Details "

@@ -12,6 +12,9 @@ import { Box } from "@material-ui/core";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { GridListTileBar } from '@material-ui/core';
+console.log('Create user........')
+
+
 let users =''
   const CreateUer = () => {
     const useStyles = makeStyles(theme => ({
@@ -62,7 +65,10 @@ let users =''
               });
 
           };
+          
+          
     return (
+      
          <Box  p={6} border = {1} borderRadius={20} m={2} width ='rem'
       height ='30rem'>
         <h3> Registration</h3>
@@ -96,9 +102,12 @@ let users =''
         </Link>
       
           </form>
+          
           </Box>
-
+        
   );
+
+ 
 };
 
 export default CreateUer;

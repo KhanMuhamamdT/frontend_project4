@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { withTheme } from "@material-ui/styles";
 import Icon from '@material-ui/core/Icon';
-
+console.log('Nav Bar')
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,

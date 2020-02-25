@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 import EventThumb from "./EventThumb";
-
+console.log('Gallery')
 const Gallery = props => {
   if (props.getEvent.length === 0) {
     return <div>Loading......</div>;

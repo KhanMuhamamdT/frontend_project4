@@ -5,14 +5,22 @@ import CreateUser from "./CreateUser";
 import CreateEvent from "./CreateEvent";
 import Gallery from "./components/Gallery";
 import Itemdetails from "./Itemdetails";
-import Createtest from "./Createtest"
+import CreateItems from "./CreateItems"
+import axios from 'axios';
+import Footer from "./components/Footer";
 const HomePage = () => {
 const [events, setEvents] = useState([]);
-  useEffect(() => {
-      fetch("http://localhost:8000/api/events")
-      .then(res => res.json())
-      .then(res => setEvents(res));
-       });
+console.log('Home')
+async function  fetchData() {
+      const res = await fetch("http://localhost:8000/api/events")
+      const data = await res.json()
+      setEvents (data)
+}
+
+useEffect( () => {
+  console.log('use effect in home page')
+  fetchData()
+},[])
   return (
     <BrowserRouter className="container">
       <Route path="/" render={props => < NavBar {...props} />}/>
@@ -23,11 +31,11 @@ const [events, setEvents] = useState([]);
         />
       <Route path="/create-user" render={props => < CreateUser {...props} />}/>
       <Route path="/create-event" render={props => < CreateEvent {...props} />}/>
-      <Route path="/create-items" render={props => < Createtest {...props} />}/>
+      <Route path="/create-items" render={props => < CreateItems {...props} />}/>
       <Route path="/itemdetails" render={props => < Itemdetails {...props} />}/>
+      <Footer/>
      </BrowserRouter>
   
-
        );
       };
 export default HomePage;
